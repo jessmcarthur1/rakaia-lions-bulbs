@@ -12,13 +12,16 @@
 <body>
 
   <!-- STEP 0: Home Page -->
-  <img src="images/hero.webp" alt="Yellow Strike Lily" class="hero-img">
+  <div class="hero-section">
+    <img src="images/hero.jpeg" alt="Yellow Strike Lily" class="hero-img">
+    <div class="hero-overlay">
+      <h1>Rakaia Lions Lily Bulbs</h1>
+      <h3>2026 selection available now!</h3>
+      <button type="button" id="startOrderBtn" class="primary-btn">Order Now</button>
+    </div>
+  </div>
 
   <div id="form-step-0">
-    <h1>Rakaia Lions Lily Bulbs</h1>
-    <h3>2026 selection available now!</h3>
-    <button type="button" id="startOrderBtn" class="primary-btn">Start Order</button>
-
     <p>The Rakaia Lions Charitable Trust is proud to offer Lily and Freesia bulbs, generously donated by local bulb
       growers. These growers supply bulbs to commercial flower producers around the world and have chosen to support us.
     </p>
@@ -26,7 +29,8 @@
     <p>There are 14 varieties of lilies available. We’re offering these bulbs at the retail
       price of $15 per bag (4 bulbs per bag) to raise funds for our trust.</p>
 
-    <p>You can purchase bulbs here on our website via our order form or if you prefer to purchase in person we have a stand outside
+    <p>You can purchase bulbs here on our website via our order form or if you prefer to purchase in person we have a
+      stand outside
       Rakaia Mobil. Orders are processed and sent out each Monday, so be sure to get your order in before 11pm Sunday
       night to make the weekly shipment.</p>
 
@@ -35,7 +39,7 @@
       wholesale rates. To learn more, please contact the Rakaia Lions Treasurer directly:</p>
 
     <ul>
-      <li>Bruce Kelly</li>
+      <li>👤 Bruce Kelly</li>
       <li>📧 rakaia.treas@lionsclubs.org.nz</li>
       <li>📞 027 437 5040</li>
     </ul>
@@ -445,6 +449,16 @@
         if (steps[stepToShow]) {
           steps[stepToShow].classList.remove('hidden');
           currentStep = stepToShow;
+        }
+
+        // Show hero overlay text only on step 0, hide it on steps 1-3
+        const heroOverlay = document.querySelector('.hero-overlay');
+        if (heroOverlay) {
+          if (stepToShow === 0) {
+            heroOverlay.classList.remove('hidden');
+          } else {
+            heroOverlay.classList.add('hidden');
+          }
         }
 
         // Control nav buttons visibility based on step

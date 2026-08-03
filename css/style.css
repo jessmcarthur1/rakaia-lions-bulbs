@@ -4,44 +4,103 @@ body {
   padding: 0;
   color: #1f1f1f;
   background: #fff;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .hidden {
   display: none;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #1f2b6c;
   font-weight: 700;
   margin: 0px;
 }
 
-h1 { font-size: 36px; }
-h2 { font-size: 30px; }
-h3 { font-size: 20px; font-weight: 500; color: #444; }
+h1 {
+  font-size: 56px;
+}
 
-p, ul, label { font-size: 16px; }
-li { font-weight: 600; }
+h2 {
+  font-size: 30px;
+}
+
+p,
+ul {
+  font-size: 16px;
+}
+
+label {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+li {
+  font-weight: 600;
+}
 
 .subtitle {
   margin-bottom: 4.2rem;
 }
 
-#form-step-1 > p {
+#form-step-1>p {
   margin-bottom: 50px;
 }
 
-.hero-img {
+.hero-section {
+  position: relative;
   width: 100vw;
-  height: 250px;
+  height: 400px;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
   margin: 0;
   padding: 0;
 }
 
-/* Base button styles */
+.hero-overlay {
+  background: linear-gradient(to bottom, rgba(56, 56, 56, 0.461), rgba(42, 42, 42, 0.413));
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 97%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  line-height: 1.4;
+}
+
+.hero-overlay h1 {
+  font-size: 46px;
+}
+
+.hero-overlay h3 {
+  font-size: 26px;
+}
+
+.hero-overlay h1,
+.hero-overlay h3 {
+  color: white;
+}
+
+.hero-overlay h1::after {
+  display: none;
+}
+
+.hero-overlay.hidden {
+  display: none;
+}
+
 button {
   font-family: inherit;
   padding: 12px 20px;
@@ -130,12 +189,15 @@ button.primary-btn:hover {
 }
 
 button#startOrderBtn {
-  margin-top: 10px;
-  margin-bottom: 40px;
+  margin-top: 25px;
+  margin-bottom: 0px;
 }
 
 /* Section layout */
-#form-step-0, #form-step-1, #form-step-2, #form-step-3 {
+#form-step-0,
+#form-step-1,
+#form-step-2,
+#form-step-3 {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -143,12 +205,8 @@ button#startOrderBtn {
 }
 
 /* Form labels and inputs */
-label {
-  display: block;
-  margin-bottom: 4px;
-}
-
-input, select {
+input,
+select {
   display: block;
   margin-bottom: 12px;
   padding: 8px;
@@ -160,8 +218,8 @@ input, select {
 }
 
 .description {
-  font-size: 0.9em;
-  color: #555;
+  font-size: 16px;
+  color: #000000;
   margin-top: 0px;
 }
 
@@ -173,11 +231,11 @@ input, select {
   margin-bottom: 30px;
 }
 
-/* Product grid */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 5px;
+  justify-content: center;
+  gap: 40px 0px;
   margin-bottom: 30px;
 }
 
@@ -186,8 +244,10 @@ input, select {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 15px;
+  padding: 10px;
   border-radius: 8px;
+  border: 1.5px solid #1f2b6c;
+  width: 220px;
 }
 
 .product-item img {
@@ -201,12 +261,30 @@ input, select {
 
 .product-item label {
   font-weight: 600;
-  margin-bottom: 5px;
 }
 
 .product-item select {
   width: 200px;
-  margin: 0 auto;
+  margin: 0;
+  border: 2px solid #1f2b6c;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #1f2b6c;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2'%3e%3cpath d='M6 9l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  cursor: pointer;
+}
+
+.product-item select:focus {
+  outline: none;
 }
 
 /* Order summary */
@@ -218,13 +296,14 @@ input, select {
 }
 
 /* Decorative underlines */
-h1::after, h2::after {
+h1::after,
+h2::after {
   content: '';
   display: block;
   width: 80px;
   height: 3px;
   background: #f1c40f;
-  margin-top: 0px;
+  margin-top: 2px;
   margin-bottom: 20px;
   border-radius: 2px;
 }
@@ -246,7 +325,7 @@ footer img {
 /* Mobile styles */
 @media (max-width: 768px) {
   body {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   h1 {
@@ -257,23 +336,22 @@ footer img {
     font-size: 28px;
   }
 
-  h3 {
-    font-size: 22px;
-  }
-
-  p, label, select, button {
-    font-size: 18px;
+  p,
+  label,
+  select,
+  button {
+    font-size: 16px;
   }
 
   input[type="number"] {
-    font-size: 18px;
+    font-size: 16px;
     padding: 12px;
     width: 80px;
   }
 
   .product-item img {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 200px;
+    max-height: 200px;
   }
 
   button {
@@ -286,7 +364,10 @@ footer img {
     gap: 15px;
   }
 
-  #form-step-0, #form-step-1, #form-step-2, #form-step-3 {
+  #form-step-0,
+  #form-step-1,
+  #form-step-2,
+  #form-step-3 {
     padding: 15px;
   }
 }
