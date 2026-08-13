@@ -571,9 +571,9 @@
 
               // Calculate delivery cost based on total
               let deliveryCost = 0;
-              if (total > 0 && total <= 60) deliveryCost = 8.00;
-              else if (total > 60 && total <= 120) deliveryCost = 10.00;
-              else if (total > 120) deliveryCost = 12.00;
+              if (total > 0 && total <= 60) deliveryCost = 10.00;
+              else if (total > 60 && total <= 120) deliveryCost = 15.00;
+              else if (total > 120) deliveryCost = 20.00;
 
               // Add delivery cost to order list
               if (deliveryCost > 0 && orderItemsList) {
