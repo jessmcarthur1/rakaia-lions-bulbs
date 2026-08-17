@@ -327,7 +327,7 @@
         </div>
 
         <div class="product-item">
-            <img src="images/placeholder.jpeg" alt="Placeholder">
+          <img src="images/placeholder.jpeg" alt="Placeholder">
           <label>Freesias</label>
           <p class="description">Mixed variety bag</p>
           <select name="freesias">
@@ -358,17 +358,17 @@
         <div class="customer-info">
           <h2>Customer Information</h2>
 
-            <label>First Name</label>
-            <input type="text" name="firstName" required />
+          <label>First Name</label>
+          <input type="text" name="firstName" required />
 
-            <label>Last Name</label>
-            <input type="text" name="lastName" required />
+          <label>Last Name</label>
+          <input type="text" name="lastName" required />
 
-            <label>Email</label>
-            <input type="email" name="email" required />
+          <label>Email</label>
+          <input type="email" name="email" required />
 
-            <label>Phone Number</label>
-            <input type="text" name="phone" required />
+          <label>Phone Number</label>
+          <input type="text" name="phone" required />
         </div>
 
         <div class="shipping-info">
@@ -404,13 +404,16 @@
   <!-- STEP 3: Thank you message -->
   <div id="form-step-3" class="hidden">
     <h2>Thank you for your order!</h2>
-    <p id="thankYouMessage">Your order has been received. Please transfer your total amount of <strong
-        id="finalAmount">$0.00</strong>
-      to:</p>
-    <p>Bank Account Name: Rakaia Lions</p>
-    <p>Bank Account Number: 03 1354 0432008 00</p>
-    <p>Reference: Your Full Name</p>
-    <p>You will also receive a confirmation email shortly.</p>
+    <p>Your order has been received. You will receive a confirmation email shortly.</p>
+
+    <div class="bank-details-box">
+      <p>Please transfer your total amount of <strong id="finalAmount">$0.00</strong> to:</p>
+      <ul>
+        <li>Bank Account Name: Rakaia Lions</li>
+        <li>Bank Account Number: 03 1354 0432008 00</li>
+        <li>Reference: Your Full Name</li>
+      </ul>
+    </div>
   </div>
 
   <div class="nav-buttons hidden" id="navButtons">
